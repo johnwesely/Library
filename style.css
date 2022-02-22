@@ -1,0 +1,251 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --body-background: #59656F;
+    --button: #f5e39b;
+    --button-active: #eed371;
+    --card-container-background: #cee9fc;
+    --header-background: #eebfb6;
+    --card-background: #eebfb6; 
+    --drop-shadow: 4px 8px 6px #94b0c4;
+    --drop-shadow-card: 4px 8px 6px #cca39b;
+    --drop-shadow-form: 4px 8px 6px rgb(91, 90, 99);
+}
+
+ @media only screen and (max-width: 600px) {
+    .page-container {
+        width: 100vw;
+    }
+
+    .header {
+        font-size: 1rem;
+    }
+}
+
+body {
+    background-color: var(--body-background);
+    display: flex;
+    justify-content: center;
+}
+
+.page-container {
+    width: 80vw;
+}
+
+.header {
+    padding: 16px;
+    background-color: var(--header-background);
+    font-size: 3rem;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    padding: 32px;
+    background-color: var(--card-container-background);
+
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 32px;
+}
+
+.card {
+    padding: 16px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    border-left: 10px solid var(--body-background);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card:hover {
+    box-shadow: var(--drop-shadow);
+}
+
+.card p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.button-container {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card button {
+    flex: 0;
+    padding: 8px 32px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: var(--button);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card button:hover {
+    box-shadow: var(--drop-shadow-card)
+}
+
+.card button:active {
+    background-color: var(--button-active);
+}
+
+.read-button {
+    margin-top: auto;
+}
+
+.add {
+    background-color: var(--card-container-background);
+    padding: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-book {
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: var(--button);
+    border-style: none;
+    border-radius: 10px;
+    padding: 8px 32px;
+}
+
+#add-book:hover {
+    box-shadow: var(--drop-shadow);
+}
+
+#add-book:active {
+    background-color: var(--header-background);
+}
+
+#book-form-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    background-color: var(--body-background);
+    padding: 32px;
+    border-radius: 10px;
+}
+
+#book-form {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#book-form span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#book-form h1 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#book-form input {
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border-style: none;
+    padding: 2px 16px;
+}
+
+#book-form div {
+    margin-top: auto;
+    align-self: center;
+}
+
+#book-form div input[type="button"] {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: var(--button);
+    border-style: none;
+    border-radius: 10px;
+    padding: 8px 32px;
+}
+
+#book-form div input[type="button"]:hover {
+    box-shadow: var(--drop-shadow-form);
+}
+
+ @media only screen and (max-width: 600px) {
+    .page-container {
+        width: 100vw;
+    }
+
+    .header {
+        font-size: 2em;
+    }
+}

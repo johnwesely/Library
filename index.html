@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <p>Welcome to Your Personal Library</p>
+        </div>
+        <div class="card-container">
+
+        </div>
+        <div class="add">
+        <button id="add-book">Add Book</button>
+        </div>
+        <div id="book-form-modal">
+            <div class="form-container">
+                <form action="" id="book-form" name="book-form" method="GET" >
+                    <h1>Add a Book to Your Library</h1>
+                    <input type="text" placeholder="Title" name="title">
+                    <input type="text" placeholder="Author" name="author">
+                    <input type="number" placeholder="Page Count" name="pageCount">
+                    <span>
+                        <p>Have you read this book?</p>
+                        <input type="checkbox" name="read" value="true">
+                    </span>
+                    <div>
+                    <input type="button" name="button" value="Click" onClick="createBook(this.form)">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
