@@ -10,14 +10,6 @@ const closeModal = document.addEventListener("click", (evt) => {
 let myLibrary = [];
 let libraryIndex = 0;
 
-const hobbit = new Book("hobby", "JR TOLK", "32", false);
-const lotr = new Book("LOTER", "JR TOLKY", "42", true);
-
-addBookToLibrary(hobbit);
-addBookToLibrary(lotr);
-
-renderBooks();
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author; 
@@ -87,7 +79,7 @@ function renderBook(book) {
 
     const readButton = document.createElement("button");
     readButton.classList.add("read-button");
-    readButton.textContent = (book.read) ? "I haven't read this" : "I read it!";
+    readButton.textContent = (book.read) ? "I have read" : "I want to read";
 
     readButton.addEventListener("click", () => {
         book.toggleRead();
